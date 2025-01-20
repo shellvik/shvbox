@@ -23,7 +23,7 @@ rice() {
   # VPN config
   chmod +x "$SCRIPT_DIR/src/htb-vpn-config/"*.sh
   sudo cp -R "$SCRIPT_DIR/src/htb-vpn-config/" /etc/htb-vpn-config
-  sudo cp "$SCRIPT_DIR/src/htb-vpn-config/defau" /etc/openvpn/config.conf
+  sudo cp "$SCRIPT_DIR/src/htb-vpn-config/default" /etc/openvpn/config.conf
   sudo ln -sf /etc/htb-vpn-config/shvpn.sh /usr/bin/shvpn
   
   # Bash config
