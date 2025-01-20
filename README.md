@@ -11,7 +11,7 @@
     ▀▀▀▄▄█▄▄▀▀▀
     
 ```
-![htb screenshot](src/desktop.jpg?raw=true "pwnbox")
+![htb screenshot](src/denv.png?raw=true "pwnbox")
 
 ---
 
@@ -48,7 +48,7 @@ sudo chmod +x install.sh
 ### Setting Fonts
 - Go to `Appearence Preferences` >> `Fonts`: 
 
-![Font Settings](src/font-settings.png)
+![Font Settings](src/font-set.png?raw=true)
 
 ## Customizing Terminal
 - **Terminal Emulator** : *Kitty*/*Ghostty*, *Terminator*.
