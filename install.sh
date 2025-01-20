@@ -28,15 +28,15 @@ rice() {
   
   # Bash config
   [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc_bak"
-  cp "$SCRIPT_DIR/src/bashrc" "$HOME/.bashrc"
+  sudo cp "$SCRIPT_DIR/src/bashrc" "$HOME/.bashrc"
 
   # Themes and Icons
   [ -f "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" ] && \
-    unzip -o "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" -d "$SCRIPT_DIR/src/" && \
+    sudo unzip -o "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT" /usr/share/icons/
 
   [ -f "$SCRIPT_DIR/src/themes.zip" ] && \
-    unzip -o "$SCRIPT_DIR/src/themes.zip" -d "$SCRIPT_DIR/src/" && \
+    sudo unzip -o "$SCRIPT_DIR/src/themes.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/themes" /usr/share/
 
   # Wallpaper
@@ -45,9 +45,9 @@ rice() {
 
   # Fonts
   [ -d "$SCRIPT_DIR/src/fonts" ] && \
-    mkdir -p "$HOME/.local/share/fonts" && \
-    unzip -o "$SCRIPT_DIR/src/fonts/*.zip" -d "$SCRIPT_DIR/src/fonts/" && \
-    cp -R "$SCRIPT_DIR/src/fonts/" "$HOME/.local/share/"
+    sudo mkdir -p "$HOME/.local/share/fonts" && \
+    sudo unzip -o "$SCRIPT_DIR/src/fonts/*.zip" -d "$SCRIPT_DIR/src/fonts/" && \
+    sudo cp -R "$SCRIPT_DIR/src/fonts/" "$HOME/.local/share/"
 }
 
 read -p "Run setup script? [Y/n] " setup
