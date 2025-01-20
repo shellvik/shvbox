@@ -25,6 +25,10 @@ rice() {
   sudo cp -R "$SCRIPT_DIR/src/htb-vpn-config/" /etc/htb-vpn-config
   sudo cp "$SCRIPT_DIR/src/htb-vpn-config/default.conf" /etc/openvpn/config.conf
   sudo ln -sf /etc/htb-vpn-config/shvpn.sh /usr/bin/shvpn
+
+  # Zellij 
+  sudo cp $SCRIPT_DIR/src/zellij /opt
+  sudo ln -sf /opt/zellij /usr/bin/zl
   
   # Bash config
   [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc_bak"
@@ -88,3 +92,4 @@ if [[ $ess =~ ^[Yy]$ ]]; then
 else
   echo "Installation cancelled."
 fi
+
