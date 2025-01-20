@@ -1,0 +1,30 @@
+[global_config]
+  ask_before_closing = never
+  link_single_click = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.84
+    background_type = transparent
+    cursor_shape = underline
+    cursor_fg_color = "#33d17a"
+    cursor_bg_color = "#33d17a"
+    cursor_color_default = False
+    font = JetBrains Mono 13
+    foreground_color = "#00ff00"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
+    use_custom_command = True
+    custom_command = bash
+    use_system_font = False
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
