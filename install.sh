@@ -7,7 +7,7 @@ sudo apt update -y
 
 # Install essentials
 install_essentials() {
-  sudo apt install -y kitty terminator mate-tweak mate-desktop-environment synapse unzip
+  sudo apt install -y kitty terminator mate-tweak mate-desktop-environment synapse unzip stow
 }
 
 read -p "Install Mate Desktop essentials? [Y/n] " mate
@@ -53,6 +53,7 @@ rice() {
     sudo unzip -o "$SCRIPT_DIR/src/fonts/*.zip" -d "$SCRIPT_DIR/src/fonts/" && \
     sudo cp -R "$SCRIPT_DIR/src/fonts/" "$HOME/.local/share/"
 }
+
 
 read -p "Run setup script? [Y/n] " setup
 if [[ $setup =~ ^[Yy]$ ]]; then
