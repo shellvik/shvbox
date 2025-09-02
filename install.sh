@@ -26,9 +26,6 @@ rice() {
   sudo cp "$SCRIPT_DIR/src/htb-vpn-config/default.conf" /etc/openvpn/config.conf
   sudo ln -sf /etc/htb-vpn-config/shvpn.sh /usr/bin/shvpn
 
-  # Zellij 
-  sudo cp $SCRIPT_DIR/src/zellij /opt
-  sudo ln -sf /opt/zellij /usr/bin/zl
   
   # Bash config
   [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc_bak"
@@ -38,10 +35,12 @@ rice() {
   [ -f "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" ] && \
     sudo unzip -o "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT" /usr/share/icons/
+    sudo rm "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" 
 
   [ -f "$SCRIPT_DIR/src/themes.zip" ] && \
     sudo unzip -o "$SCRIPT_DIR/src/themes.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/themes" /usr/share/
+    sudo rm "$SCRIPT_DIR/src/themes.zip"
 
   # Wallpaper
   [ -d "$SCRIPT_DIR/src/wallpaper" ] && \
@@ -52,6 +51,7 @@ rice() {
     sudo mkdir -p "$HOME/.local/share/fonts" && \
     sudo unzip -o "$SCRIPT_DIR/src/fonts/*.zip" -d "$SCRIPT_DIR/src/fonts/" && \
     sudo cp -R "$SCRIPT_DIR/src/fonts/" "$HOME/.local/share/"
+    sudo rm "$SCRIPT_DIR/src/fonts/*.zip" 
 }
 
 
