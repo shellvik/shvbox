@@ -26,10 +26,30 @@ wget -c https://github.com/shellvik/shvbox/archive/refs/heads/master.zip -O shvb
     mv shvbox-master shvbox
 ```
 
-- or Clone(slow)
+- or **Clone**
+- _Trun of compression_:
 
 ```bash
-git clone https://github.com/shellvik/shvbox
+git config --global core.compression 0
+```
+
+- _Partial clone_:
+
+```bash
+git clone --depth 1 https://github.com/shellvik/shvbox
+```
+
+- _Go into the new directory and retrive the rest of the clone_:
+
+```bash
+cd shvbox && \
+git fetch --unshallow
+```
+
+- _Do a regular pull_:
+
+```bash
+git pull --all
 ```
 
 ## Install

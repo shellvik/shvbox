@@ -76,6 +76,7 @@ rice() {
   [ -f "$SCRIPT_DIR/src/themes.zip" ] && \
     sudo unzip -o "$SCRIPT_DIR/src/themes.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/themes" /usr/share/
+    echo "Copying themes... to /usr/share/themes"
 
   # Wallpaper
   [ -d "$SCRIPT_DIR/src/wallpaper" ] && \
