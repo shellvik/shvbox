@@ -24,7 +24,7 @@ git clone https://github.com/shellvik/shvbox
 - Download the repo
 
 ```bash
-wget -c https://github.com/shellvik/hbox/archive/master.zip -O hbox.zip  && unzip shvbox.zip && rm -rf shvbox.zip
+wget -c https://github.com/shellvik/hbox/archive/master.zip -O shvbox.zip  && unzip shvbox.zip && rm -rf shvbox.zip
 ```
 
 ## Install
