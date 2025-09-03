@@ -26,8 +26,10 @@ wget -c https://github.com/shellvik/shvbox/archive/refs/heads/master.zip -O shvb
     mv shvbox-master shvbox
 ```
 
-- or **Clone**
-- _Trun of compression_:
+---
+
+- OR **Clone**
+  - _Trun off compression_:
 
 ```bash
 git config --global core.compression 0
@@ -51,6 +53,8 @@ git fetch --unshallow
 ```bash
 git pull --all
 ```
+
+---
 
 ## Install
 
