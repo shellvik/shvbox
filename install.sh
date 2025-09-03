@@ -72,12 +72,10 @@ rice() {
   [ -f "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" ] && \
     sudo unzip -o "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT" /usr/share/icons/
-    sudo rm "$SCRIPT_DIR/src/Material-Black-Lime-Numix-FLAT.zip" 
 
   [ -f "$SCRIPT_DIR/src/themes.zip" ] && \
     sudo unzip -o "$SCRIPT_DIR/src/themes.zip" -d "$SCRIPT_DIR/src/" && \
     sudo cp -R "$SCRIPT_DIR/src/themes" /usr/share/
-    sudo rm "$SCRIPT_DIR/src/themes.zip"
 
   # Wallpaper
   [ -d "$SCRIPT_DIR/src/wallpaper" ] && \
@@ -88,7 +86,6 @@ rice() {
     sudo mkdir -p "$HOME/.local/share/fonts" && \
     sudo unzip -o "$SCRIPT_DIR/src/fonts/*.zip" -d "$SCRIPT_DIR/src/fonts/" && \
     sudo cp -R "$SCRIPT_DIR/src/fonts/" "$HOME/.local/share/"
-    sudo rm "$SCRIPT_DIR/src/fonts/*.zip" 
 }
 
 
@@ -113,7 +110,8 @@ fix_locale() {
 
 install_editor() {
   echo "Installing Obsidian and Sublime..."
-  wget -q https://github.com/obsidianmd/obsidian-releases/releases/download/v1.7.7/obsidian_1.7.7_amd64.deb -O /tmp/obsidian.deb
+  read -p "Go to: https://obsidian.md/download and paste the debian download link here: " debdown
+  wget -q $debdown -O /tmp/obsidian.deb
   sudo dpkg -i /tmp/obsidian.deb && rm -f /tmp/obsidian.deb
 
   wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | \
