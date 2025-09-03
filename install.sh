@@ -7,8 +7,46 @@ sudo apt update -y
 
 # Install essentials
 install_essentials() {
-  sudo apt install -y kitty terminator mate-tweak mate-desktop-environment synapse unzip stow
+  GREEN="\e[32m"
+  RED="\e[31m"
+  YELLOW="\e[33m"
+  CYAN="\e[36m"
+  RESET="\e[0m"
+
+  local packages=(
+    kitty
+    terminator
+    mate-tweak
+    mate-desktop-environment
+    dconf-editor
+    synapse
+    unzip
+    stow
+  )
+
+  echo -e "\n${CYAN}➜ Updating package lists...${RESET}"
+  sudo apt update -y >/dev/null 2>&1 && \
+    echo -e "${GREEN}✔ Package lists updated${RESET}" || \
+    echo -e "${RED}✘ Failed to update package lists${RESET}"
+
+  echo -e "\n${CYAN}➜ Installing essentials...${RESET}"
+
+  for pkg in "${packages[@]}"; do
+    if dpkg -s "$pkg" &>/dev/null; then
+      echo -e "${YELLOW}⚡ $pkg is already installed${RESET}"
+    else
+      if sudo apt install -y "$pkg" >/dev/null 2>&1; then
+        echo -e "${GREEN}✔ Installed $pkg${RESET}"
+      else
+        echo -e "${RED}✘ Failed to install $pkg${RESET}"
+      fi
+    fi
+  done
+
+  echo -e "\n${CYAN}➜ Essentials setup complete.${RESET}\n"
 }
+
+
 
 read -p "Install Mate Desktop essentials? [Y/n] " mate
 if [[ $mate =~ ^[Yy]$ ]]; then
@@ -17,7 +55,6 @@ else
   echo "Installation cancelled."
 fi
 
-install_essentials
 
 rice() {
   # VPN config

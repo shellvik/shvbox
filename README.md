@@ -17,19 +17,42 @@
 
 ## Clone the repo
 
+- Download the repo
+
+```bash
+wget -c https://github.com/shellvik/shvbox/archive/refs/heads/master.zip -O shvbox.zip  && \
+    unzip shvbox.zip && \
+    rm -rf shvbox.zip
+```
+
+- or Clone(slow)
+
 ```bash
 git clone https://github.com/shellvik/shvbox
 ```
 
-- Download the repo
-
-```bash
-wget -c https://github.com/shellvik/hbox/archive/master.zip -O shvbox.zip  && unzip shvbox.zip && rm -rf shvbox.zip
-```
-
 ## Install
 
-### Install Mate Desktop Environment
+### Install Linux Headers
+
+```bash
+sudo apt update && \
+sudo apt install -y linux-headers-$(uname -r) build-essential dkms
+```
+
+### Vbox Guest Additions
+
+- `Devices` > `Insert Guest Additions CD image…`
+- Installation:
+
+```bash
+su root
+cp /media/cdrom0/VBoxLinuxAdditions.run /root/
+cd /root
+./VBoxLinuxAdditions.run
+```
+
+### Install Mate Desktop Environment(Already in the install.sh)
 
 - This will install complete MATE desktop(Required in Kali, Parros HTB edition has MATE by default).
 
