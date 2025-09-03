@@ -22,7 +22,8 @@
 ```bash
 wget -c https://github.com/shellvik/shvbox/archive/refs/heads/master.zip -O shvbox.zip  && \
     unzip shvbox.zip && \
-    rm -rf shvbox.zip
+    rm -rf shvbox.zip && \
+    mv shvbox-master shvbox
 ```
 
 - or Clone(slow)
@@ -69,6 +70,14 @@ sudo apt-get install mate-desktop-environment mate-tweak dconf-editor
 cd shvbox
 sudo chmod +x install.sh
 ./install.sh
+```
+
+### Get dotfiles
+
+```bash
+git clone https://github.com/shellvik/dotfiles ~/dotfiles && \
+cd ~/dotfiles && \
+stow .
 ```
 
 ## Visual Changes
